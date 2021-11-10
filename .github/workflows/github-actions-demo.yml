@@ -19,7 +19,7 @@ jobs:
   step1:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@${{ github.event.inputs.branch }}
+      - uses: actions/checkout@master
       - run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
@@ -28,4 +28,4 @@ jobs:
     needs: step1 
     steps:
       - run: |
-          echo "step2 hello."
+          ll
