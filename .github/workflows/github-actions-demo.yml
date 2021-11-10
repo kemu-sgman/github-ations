@@ -28,4 +28,4 @@ jobs:
     needs: step1 
     steps:
       - run: |
-          ll
+          ls -l
