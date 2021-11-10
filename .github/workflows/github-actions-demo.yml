@@ -12,10 +12,15 @@ on:
         default: 'The Octoverse'
 
 jobs:
-  say_hello:
+  step1:
     runs-on: self-hosted
     steps:
       - run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
-          
+  step2:
+    runs-on: self-hosted
+    needs: step1 
+    steps:
+      - run: |
+          echo "step2 hello."
