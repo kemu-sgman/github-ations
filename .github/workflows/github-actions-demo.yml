@@ -28,4 +28,4 @@ jobs:
     needs: step1 
     steps:
       - run: |
-          ls -l
+          sh test.sh
