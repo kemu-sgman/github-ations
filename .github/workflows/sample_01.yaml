@@ -1,0 +1,22 @@
+name: nmt image deployment
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'version'
+        required: false
+        default: 'v1.6.10'
+
+jobs:
+  step1:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@master
+      - run: |
+          echo "Hello ${{ github.event.inputs.version }}!"
+  step2:
+    runs-on: self-hosted
+    needs: step1 
+    steps:
+      - run: |
+          sh test.sh
