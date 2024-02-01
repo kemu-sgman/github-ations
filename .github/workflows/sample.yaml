@@ -1,20 +1,6 @@
 name: Sample workflow
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'branch name'
-        required: true
-        default: 'master'
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
-
 jobs:
   step:
     runs-on: ubuntu-latest
