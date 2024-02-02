@@ -1,6 +1,13 @@
 name: Sample workflow
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        description: Test Environment
+        options: 
+        - mt_regression_dev_new
+        - mt_regression_dev_new_singin
   repository_dispatch:
     types: [test_result]
 jobs:
@@ -9,7 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          if: "${{ github.event.client_payload.tag_name}}" = "":
-            echo "workflow"
-          else:
-            echo "${{ github.event.client_payload.tag_name }}"
+          echo "${{ github.event.inputs.environment }}${{ github.event.client_payload.tag_name }}"
