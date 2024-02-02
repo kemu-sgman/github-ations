@@ -4,7 +4,7 @@ on:
     inputs:
       target:
         type: choice
-        description: Test Environment
+        description: 選んで
         options: 
         - mt_regression_dev_new
         - mt_regression_dev_new_singin
