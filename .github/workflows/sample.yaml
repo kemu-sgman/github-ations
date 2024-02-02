@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          if: ${{ github.event.client_payload.tag_name}} = "":
+          if: "${{ github.event.client_payload.tag_name}}" = "":
             echo "workflow"
-          if: ${{ github.event.client_payload.tag_name}} != "":
+          else:
             echo "${{ github.event.client_payload.tag_name }}"
