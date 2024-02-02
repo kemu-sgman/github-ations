@@ -1,0 +1,12 @@
+name: mablrc workflow
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [mablrc]
+jobs:
+  step:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: |
+          echo "mablrc!"
