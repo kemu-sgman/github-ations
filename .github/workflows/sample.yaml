@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          echo "${{ github.event.inputs.environment }}${{ github.event.client_payload.tag_name }}"
+          echo "${{ github.event.inputs.target }}${{ github.event.client_payload.tag_name }}"
