@@ -1,15 +1,8 @@
 name: Sample workflow
+run-name: "${{ github.event.client_payload.description }}"
 on:
-  workflow_dispatch:
-    inputs:
-      target:
-        type: choice
-        description: 選んで
-        options: 
-        - mt_regression_dev_new
-        - mt_regression_dev_new_singin
   repository_dispatch:
-    types: [test_result]
+    types: [mabl_slack_command]
 jobs:
   step:
     runs-on: ubuntu-latest
