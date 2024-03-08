@@ -19,7 +19,6 @@ jobs:
   step2:
     if: ${{ github.event.inputs.target }} == 'true'
     runs-on: ubuntu-latest
-    needs: step1 
     steps:
       - run: |
           echo step2
