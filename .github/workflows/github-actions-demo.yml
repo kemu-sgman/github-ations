@@ -2,6 +2,10 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
+      test:
+        description: test
+        required: true
+        type: string
       target:
         description: 'True to print to STDOUT'
         required: true
@@ -9,6 +13,7 @@ on:
 
 jobs:
   step1:
+    if: ${{ inputs.test }} == ""go
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
