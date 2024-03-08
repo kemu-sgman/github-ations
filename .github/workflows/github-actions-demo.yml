@@ -6,8 +6,8 @@ on:
         type: choice
         description: test
         options: 
-        - "true"
-        - "false"
+        - 'true'
+        - 'false'
 
 jobs:
   step1:
@@ -17,7 +17,7 @@ jobs:
       - run: |
           echo ${{ github.event.inputs.target }}
   step2:
-    if: ${{ github.event.inputs.target }} == "true"
+    if: ${{ github.event.inputs.target }} == 'true'
     runs-on: ubuntu-latest
     needs: step1 
     steps:
