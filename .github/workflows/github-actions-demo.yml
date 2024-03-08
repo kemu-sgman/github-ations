@@ -13,14 +13,13 @@ on:
 
 jobs:
   step1:
-    if: ${{ inputs.test }} == 'go'
     runs-on: ubuntu-latest
+    if: ${{ inputs.test }} == 'go'
     steps:
       - uses: actions/checkout@master
-      - run: echo step1
+      - run: echo ${{ inputs.test }}
   step2:
-    if: ${{ inputs.print_tags }} 
     runs-on: ubuntu-latest
+    if: ${{ inputs.print_tags }} 
     steps:
-      - run: |
-          echo step2
+      - run: echo step2
