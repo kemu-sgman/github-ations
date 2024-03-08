@@ -14,10 +14,10 @@ on:
 jobs:
   step1:
     runs-on: ubuntu-latest
-    if: ${{ inputs.test }} == 'go'
+    if: ${{ github.event.inputs.test }} == 'go'
     steps:
       - uses: actions/checkout@master
-      - run: echo ${{ inputs.test }}
+      - run: echo ${{ github.event.inputs.test }} ${{ inputs.print_tags }} 
   step2:
     runs-on: ubuntu-latest
     if: ${{ inputs.print_tags }} 
