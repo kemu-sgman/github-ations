@@ -3,21 +3,18 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        type: choice
-        description: test
-        options: 
-        - 'true'
-        - 'false'
+        description: 'True to print to STDOUT'
+        required: true
+        type: boolean
 
 jobs:
   step1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: |
-          echo ${{ github.event.inputs.target }}
+      - run: echo step1
   step2:
-    if: ${{ github.event.inputs.target }} == 'true'
+    if: ${{ inputs.print_tags }} 
     runs-on: ubuntu-latest
     steps:
       - run: |
