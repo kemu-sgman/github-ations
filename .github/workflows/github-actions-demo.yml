@@ -11,6 +11,9 @@ on:
         required: true
         type: boolean
 
+  repository_dispatch:
+    types: [sample]
+
 jobs:
   step1:
     runs-on: ubuntu-latest
@@ -18,8 +21,15 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: echo ${{ github.event.inputs.test }}
+  
   step2:
     runs-on: ubuntu-latest
     if: ${{ inputs.target }} 
     steps:
       - run: echo step2
+  
+  step3:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.client_payload.flg }}
+    steps:
+      - run: echo step3
