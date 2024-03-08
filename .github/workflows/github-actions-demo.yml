@@ -6,9 +6,8 @@ on:
         type: choice
         description: test
         options: 
-        - test1
-        - test2
-        - ""
+        - "true"
+        - "false"
 
 jobs:
   step1:
@@ -16,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: |
-          echo ${{ github.event.inputs.target }}
+          echo step1
   step2:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.target }} != ""
+    if: ${{ github.event.inputs.target }} == true
     needs: step1 
     steps:
       - run: |
