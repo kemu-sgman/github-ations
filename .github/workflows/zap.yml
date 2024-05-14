@@ -13,7 +13,7 @@ jobs:
       - name: Action Full Scan
         uses: zaproxy/action-full-scan@v0.10.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
           docker_name: zaproxy/zap-stable
           target: https://www.example.com
           cmd_options: >
