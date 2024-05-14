@@ -1,6 +1,6 @@
 name: OWASP ZAP Actions
 on:
-  repository_dispatch:
+  workflow_dispatch:
 jobs:
   website-scan:
     runs-on: ubuntu-latest
