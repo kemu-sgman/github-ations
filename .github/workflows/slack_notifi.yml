@@ -19,13 +19,11 @@ jobs:
               "text": "test",
               "blocks": [
                 {
-                  "type": "context",
-                  "elements": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "完了しました。結果はmablの通知を確認してください。"
-                    }
-                  ]
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "完了しました。結果はmablの通知を確認してください。"
+                  }
                 }
               ]
             }
