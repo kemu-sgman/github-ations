@@ -25,7 +25,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Actions: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}"
+                    "text": "test"
                   }
                 },
                 {
@@ -33,7 +33,7 @@ jobs:
                   "elements": [
                     {
                       "type": "mrkdwn",
-                      "text": "Author: <https://github.com/${{ github.event.sender.login }}|@${{ github.event.sender.login }}>"
+                      "text": "sample"
                     }
                   ]
                 }
@@ -41,5 +41,5 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
   
