@@ -1,26 +1,23 @@
-name: Slack Build Notifier
+name: Slack Incoming Webhooks
 on:
   workflow_dispatch:
 jobs:
-  step:
-    name: slack notification
+  step1:
     runs-on: ubuntu-latest
     steps:
+      # Check out theis repo
       - uses: actions/checkout@v2
+
+      # Start a Slack workflow using a webhook trigger
+      # https://github.com/slackapi/slack-github-action
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
-        uses: slackapi/slack-github-action@v1.23.0
+        uses: slackapi/slack-github-action@v1.16.0
         with:
           payload: |
             {
+              "text": "test",
               "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "ビルド成功"
-                  }
-                },
                 {
                   "type": "section",
                   "text": {
@@ -42,4 +39,3 @@ jobs:
         env:
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
-  
