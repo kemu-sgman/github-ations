@@ -19,18 +19,11 @@ jobs:
               "text": "test",
               "blocks": [
                 {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "test"
-                  }
-                },
-                {
                   "type": "context",
                   "elements": [
                     {
                       "type": "mrkdwn",
-                      "text": "sample"
+                      "text": "完了しました。結果はmablの通知を確認してください。"
                     }
                   ]
                 }
