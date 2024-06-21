@@ -1,9 +1,6 @@
 name: Slack Build Notifier
 on:
-  workflow_run:
-    workflows:
-      - Build and deploy to Kuroco front
-    types: [completed]
+  workflow_dispatch:
 jobs:
   on-success:
     runs-on: ubuntu-latest
